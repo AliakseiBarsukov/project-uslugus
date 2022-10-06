@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "imagemin-gifsicle": "^7.0.0"
+    "imagemin-gifsicle": "^7.0.0",
+    "normalize.css": "^8.0.1"
   }
 }
-

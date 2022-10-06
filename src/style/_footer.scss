@@ -1,0 +1,30 @@
+.footer {
+  padding: 55px 0;
+
+  &__container {
+    display: grid;
+    gap: 14px;
+    grid-template-areas:
+      'logo .'
+      'copyrigth contact';
+  }
+
+  &__logo {
+    grid-area: logo;
+  }
+
+  &__copyrigth {
+    grid-area: copyrigth;
+    align-self: end;
+  }
+
+  &__contact {
+    grid-area: contact;
+    justify-self: end;
+    gap: 7px;
+  }
+
+  &__design {
+    padding-bottom: 7px;
+  }
+}
