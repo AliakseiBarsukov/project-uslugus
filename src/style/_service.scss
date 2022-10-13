@@ -6,9 +6,13 @@
   display: grid;
   grid-template-areas:
     'avatar present price'
-    '. . review';
+    'contacts contacts review';
   grid-auto-columns: 50px 1fr max-content;
   gap: 20px 24px;
+
+  &_person {
+    gap: 40px 14px;
+  }
 
   &__avatar {
     grid-area: avatar;
@@ -21,6 +25,7 @@
   &__title {
     font-size: 24px;
     margin-bottom: 10px;
+    font-weight: 400;
   }
 
   &__name {
@@ -38,16 +43,53 @@
     grid-area: review;
     display: flex;
     gap: 16px;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 
-  &__stars {
+  &__contacts {
+    grid-area: contacts;
     display: flex;
-    gap: 2px;
+    flex-direction: column;
+    grid-column: span 2;
+    align-self: end;
+    gap: 8px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
     align-items: center;
+    gap: 9px;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &_phone:before {
+      background-image: url('img/phone.svg');
+    }
+    &_mail:before {
+      background-image: url('img/email.svg');
+    }
+
+    &_phone, &_mail {
+      transition: color .2s ease-in-out;
+    }
+
+    &_phone:hover, &_mail:hover {
+      color: #4163BB;
+    }
+
   }
 
   &__count-review {
-    padding: 18px;
+    padding-left: 18px;
     background: url('img/icon-comment.svg') left/14px no-repeat;
   }
 }
