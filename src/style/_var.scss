@@ -2,4 +2,10 @@ $black: #F2F5FC;
 $text: #000;
 
 
+@mixin max-width ($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
 

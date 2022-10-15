@@ -1,5 +1,13 @@
 .footer {
-  padding: 55px 0;
+  padding: 55px 0 ;
+
+  @include max-width(768px) {
+    padding-bottom: 30px;
+  }
+
+  @include max-width(768px) {
+    padding-bottom: 14px;
+  }
 
   &__container {
     display: grid;
@@ -7,10 +15,22 @@
     grid-template-areas:
       'logo .'
       'copyrigth contact';
+
+    @include max-width(520px) {
+      grid-template-areas:
+        'logo '
+        'contact'
+        'copyrigth ';
+      gap: 0;
+    }
   }
 
   &__logo {
     grid-area: logo;
+
+    @include max-width(520px) {
+      margin-bottom: 44px;
+    }
   }
 
   &__copyrigth {
@@ -22,6 +42,11 @@
     grid-area: contact;
     justify-self: end;
     gap: 7px;
+
+    @include max-width(520px) {
+      justify-self: start;
+      margin-bottom: 33px;
+    }
   }
 
   &__design {
